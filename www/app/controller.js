@@ -1,0 +1,1 @@
+var fiti = angular.module('kaafiti', ["ngRoute"]);

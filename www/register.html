@@ -1,0 +1,61 @@
+    <!-- index.html -->
+    <!DOCTYPE html>
+
+    <!-- define angular app -->
+    <html ng-app="kaafiti">
+    <head>
+      <!-- For proper rendering of this page in mobile screen-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- SCROLLS -->
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="./css/bootstrap.min.css" />
+      <link rel="stylesheet" href="./fonts/css/all.min.css" />
+      
+    <link rel="stylesheet" href="./css/w3.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/theme.css" rel="stylesheet">
+
+      <!-- SPELLS -->
+      <!-- load angular via CDN -->
+      <script type="text/javascript" src="./js/index.js"></script>
+      <script src="./js/jquery-3.4.1.min.js"></script>
+      <script src="./js/pouchdb-7.1.1.min.js"></script>
+      <script src="./js/angular.min.js"></script>
+      <script src="./js/angular-route.js">      </script>
+      <script src="./app/controller.js"></script>
+      <script src="./app/app.js"></script>
+      <script src="./app/common.js"></script>
+      <link href="./css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="./js/tabulator.min.js"></script>
+    </head>
+
+    <!-- define angular controller -->
+    <body ng-controller="mainController">
+        <div class="w3-panel">
+    <form class="w3-container">
+
+        <div id="first">
+        <input class="w3-input" type="date" placeholder="date of birth" id="dob"  required>
+        <input class="w3-input" type="number" placeholder="Weight (in Kgs)"  id="weight" required>
+        <input class="w3-input" type="number" placeholder="Height (in Meters)" id="height"  required>
+        <select name="gender" id="gender" class="w3-input">
+          <option value="">Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br>
+        <a class="btn btn-outline-success" onclick="next()">Next</a>
+      </div>
+      <div id="second" style="display: none;">
+        <!-- hidden by default -->
+        <input class="w3-input" type="text" placeholder="Name" id="username" required>
+        <input class="w3-input" type="email" placeholder="Email" id="email" required>
+        <input class="w3-input" type="text" placeholder="Password" id="" required>
+        <input class="w3-input" type="text" placeholder="Confirm Password" id="" required>
+        <br>
+        <a class="btn btn-outline-success" onclick="previous()">previous</a>
+        <input name="" id="" class="btn btn-outline-primary" type="button" onclick="add_user()" value="register"> <br><br>
+      </div>  
+      </form>
+  </div>
+  </body>
+    </html>

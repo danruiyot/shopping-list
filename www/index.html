@@ -1,0 +1,92 @@
+    <!-- index.html -->
+    <!DOCTYPE html>
+
+    <!-- define angular app -->
+    <html ng-app="kaafiti">
+    <head>
+      <!-- For proper rendering of this page in mobile screen-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- SCROLLS -->
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="./css/bootstrap.min.css" />
+      <link rel="stylesheet" href="./fonts/css/all.min.css" />
+      
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link href="./css/jquery.dataTables.min.css" rel="stylesheet" />
+ <link rel="stylesheet" href="./css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- SPELLS -->
+      <!-- load angular via CDN -->
+      <script src="./js/jquery-3.4.1.min.js"></script>
+
+      <link href="./css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="./js/tabulator.min.js"></script>
+    </head>
+
+    <!-- define angular controller -->
+    <body ng-controller="mainController">
+<div>
+  <nav class="navbar navbar-expand navbar-light bg-light w3-top" >
+      <ul class="nav navbar-nav container">
+          <li class="nav-item active">
+              <a class="nav-link w3-text-theme" href="#"><span class="">{{ name }}</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link w3-text-theme" href="#">{{ title }}</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link w3-text-theme" href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+          </li>
+      </ul>
+  </nav>
+  <br>
+  <br>
+</div>
+
+<div class="container">
+  <div id="main" class="mt-4 mb-4">
+    <div ng-view></div>
+
+</div>
+</div>
+<br>
+<br>
+
+<nav class="navbar navbar-expand fixed-bottom bottom navbar-light bg-light">
+  <div class="nav navbar-nav container">
+    
+      <a class="nav-item nav-link "  ng-click="home()" href="#/!"><i class="fa fa-home w3-hover-text-theme link" aria-hidden="true" style='font-size:36px'></i> <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" ng-click="bmi()" href="#!bmi"><i class="fa fa-calculator w3-hover-text-theme link" aria-hidden="true" style='font-size:36px'></i></a>
+      <a class="nav-item nav-link" ng-click="exercise()" href="#!exercise"><i class="fa fa-running w3-hover-text-theme link" aria-hidden="true" style='font-size:36px'></i></a>
+      <a class="nav-item nav-link" ng-click="food()" href="#!food"><i class="fa fa-pizza-slice w3-hover-text-theme link" aria-hidden="true" style='font-size:36px'></i></a>
+      <a class="nav-item nav-link" ng-click="recipe()" href="#!recipe"><i class="fa fa-list w3-hover-text-theme link" aria-hidden="true" style='font-size:36px'></i></a>
+      <a class="nav-item nav-link" ng-click="user()" href="#!user"><i class="fa fa-user w3-hover-text-theme link" aria-hidden="true" style='font-size:36px'></i></a>
+  </div>
+</nav>
+
+
+<script type="text/javascript" src="./js/index.js"></script>
+<script src="./js/jquery.dataTables.min.js"></script>
+<script src="./js/pouchdb-7.1.1.min.js"></script>
+<script src="./js/angular.min.js"></script>
+<script src="./js/angular-route.js">      </script>
+<script src="./app/controller.js"></script>
+<script src="./app/app.js"></script>
+<script src="./app/router.js"></script>
+<script src="./app/common.js"></script>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="./app/firebasesdk.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-firestore.js"></script>
+   </body>
+
+ </html>

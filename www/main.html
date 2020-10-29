@@ -1,0 +1,64 @@
+<br>
+<label for="" >maingoal:</label>
+<span class="w3-text-theme">Calories</span>
+<!-- progress bar -->
+ <div class="progress">
+     <div class="progress-bar progress-bar  w3-theme" role="progressbar"
+         style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+ </div>
+
+
+<br>
+<div>
+   <div class="container mb-5">
+     <div class="w3-row">
+       <div class="w3-col s4 w3-text-blue">
+         <span>PROTEIN</span>
+         <h3>130,1</h3>
+       </div>
+       <div class="w3-col s4 w3-text-amber">
+         <span>FAT</span>
+         <h3>15</h3>
+       </div>
+       <div class="w3-col s4 w3-text-red">
+         <span>CARBS</span>
+         <h3>3,2</h3>
+       </div>
+
+     </div>
+   </div>
+ </div>
+
+<table class="table table-responsive table-striped" id="myTables"  style="width:100%">
+    <thead >
+        <tr >
+          <!--  colspan="5" -->
+            <th class="center" style="border: 0px;">Meals</th>
+            <th class="w3-hide" style="border: 0ch;">proteins</th>
+            <th class="w3-hide" style="border: 0ch;">fat</th>
+            <th class="w3-hide" style="border: 0ch;">Carbs</th>
+            <th class="w3-hide" style="border: 0ch;">Kcal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="x in names" class="hoverable">
+            <td>{{ x.name }}</td>
+            <td><i class="fas fa-circle w3-text-blue"></i></i>{{( x.nutrition['protein'] | number: 0)  }}</td>
+            <td><i class="fas fa-circle w3-text-amber  "></i>{{ (x.nutrition['fat'] | number: 0)  }}</td>
+            <td><i class="fas fa-circle w3-text-red  "></i>{{ (x.nutrition['carbohydrate'] | number: 0) }}</td>
+            <td><i class="fas fa-circle text-success  "></i>{{ (x.nutrition['fat'] + x.nutrition['carbohydrate'] + x.nutrition['protein'] | number:0)*1 }}</td>
+
+        </tr>
+    </tbody>
+</table>
+<script>
+$(document).ready( function () {
+    $('#myTables').DataTable( {
+      "bPaginate": true,
+      "bLengthChange": false,
+      "bFilter": true,
+      "bInfo": false,
+      "bAutoWidth": false
+    } );
+} );
+</script>
